@@ -1,6 +1,17 @@
 #include <iostream>
+#include <fstream>
+
 using namespace std;
 
 int main() {
-  cout << "Test" << endl;
+  char str[300];
+  cout << "Start..." << endl;
+  ifstream cfFile("cdrpp.cf");
+  if (cfFile.is_open()) {
+    cfFile >> str;
+  } else {
+    return -1;
+  }
+
+  cout << str << endl;
 }
